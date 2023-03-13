@@ -13,6 +13,7 @@ export default function Document() {
         <div id="modal_wrapper" className="modal_wrapper"></div>
         <script dangerouslySetInnerHTML={{
             __html: `
+  
       
            (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
            m[i].l=1*new Date();
@@ -30,6 +31,19 @@ export default function Document() {
             }}
           />
         <noscript><div><Image src="https://mc.yandex.ru/watch/92751219" style={{position:'absolute', left:'-9999px'}} alt="" /></div></noscript>
+        
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-260487941-1"></script>
+    
+
+        <script dangerouslySetInnerHTML={{
+            __html: `
+             window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'UA-260487941-1');
+               `,
+            }}
+          />
       </body>
     </Html>
   );
