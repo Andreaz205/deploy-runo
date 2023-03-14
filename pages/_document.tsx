@@ -55,7 +55,8 @@ export default function Document() {
             }}
           />
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-PN1EVHM2RF"></script>
-        <script dangerouslySetInnerHTML={{`
+        <script dangerouslySetInnerHTML={{
+            __html: `
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
           gtag('js', new Date());
