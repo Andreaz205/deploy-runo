@@ -31,9 +31,19 @@ export default function Document() {
             }}
           />
         <noscript><div><Image src="https://mc.yandex.ru/watch/92751219" style={{position:'absolute', left:'-9999px'}} alt="" /></div></noscript>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-9YXZR7Y133"></script>
         
         <script async src="https://www.googletagmanager.com/gtag/js?id=UA-260487941-1"></script>
-    
+        <script dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+
+              gtag('config', 'G-9YXZR7Y133');
+               `,
+            }}
+          />
 
         <script dangerouslySetInnerHTML={{
             __html: `
