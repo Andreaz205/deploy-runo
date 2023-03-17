@@ -6,6 +6,7 @@ import { Home } from "pages/index";
 import { useAppDispatch } from "@/shared/lib";
 import { useEffect } from "react";
 import { banner, salesLeader } from "@/entities";
+import axios from 'axios'
 import {
   BannerT,
   getBannerSlides,
@@ -26,13 +27,19 @@ export default function Index(props: Props) {
     dispatch(salesLeader.actions.setList(props.salesLeader));
   }, []);
 
+  const async handle = () => {
+    let response = await axios.get('/http://localhost:8000/api/recaptcha')
+    console.log(response)
+  }
   return (
     <>
       <Head>
         <title>Главная | YORCOM</title>
       </Head>
 
+      <button style="margin: 500px" onClick={() => handle()}>Получить token</button>
       <Home />
+      
     </>
   );
 }
