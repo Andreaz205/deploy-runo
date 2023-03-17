@@ -37,7 +37,7 @@ export default function Index(props: Props) {
         <title>Главная | YORCOM</title>
       </Head>
 
-      <button style="margin: 500px" onClick={() => handle()}>Получить token</button>
+      <button style{{margin: '500px'}} onClick={() => handle()}>Получить token</button>
       <Home />
       
     </>
