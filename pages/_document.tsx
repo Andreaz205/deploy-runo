@@ -65,6 +65,17 @@ export default function Document() {
                `,
             }}
         />
+        <script src="https://www.google.com/recaptcha/enterprise.js?render=6Ld6fQolAAAAAFZ9jfo8-dDBmQb0CoeTUEmb7PQU"></script>
+        <script dangerouslySetInnerHTML={{
+            __html: `
+                grecaptcha.enterprise.ready(function() {
+                    grecaptcha.enterprise.execute('6Ld6fQolAAAAAFZ9jfo8-dDBmQb0CoeTUEmb7PQU', {action: 'homepage'}).then(function(token) {
+                        console.log(token)
+                    });
+                });
+               `,
+            }}
+          />
       </body>
     </Html>
   );
