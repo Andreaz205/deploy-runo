@@ -28,7 +28,7 @@ export default function Index(props: Props) {
   }, []);
 
   const handle = async () => {
-    let response = await axios.get('/http://localhost:8000/api/recaptcha')
+    let response = await axios.get('http://localhost:8000/api/recaptcha')
     console.log(response)
   }
   return (
