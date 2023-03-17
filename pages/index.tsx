@@ -27,7 +27,7 @@ export default function Index(props: Props) {
     dispatch(salesLeader.actions.setList(props.salesLeader));
   }, []);
 
-  const async handle = () => {
+  const handle = async () => {
     let response = await axios.get('/http://localhost:8000/api/recaptcha')
     console.log(response)
   }
