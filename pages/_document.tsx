@@ -2,6 +2,7 @@ import { Html, Head, Main, NextScript } from "next/document";
 import { Provider } from "react-redux";
 import { store } from "../store/store";
 import Image from "next/image";
+import axios from "axios"
 
 export default function Document() {
   return (
@@ -69,7 +70,12 @@ export default function Document() {
             __html: `
                 grecaptcha.enterprise.ready(function() {
                     grecaptcha.enterprise.execute('6Ld6fQolAAAAAFZ9jfo8-dDBmQb0CoeTUEmb7PQU', {action: 'homepage'}).then(function(token) {
-                        console.log(token)
+                        axios.post('http://localhost:8000/api/recaptcha', {
+                              token: token
+                          })
+                          .catch(() => {
+                              console.log('POST-запрос в API Google не был отправлен.');
+                          })
                     });
                 });
                `,
