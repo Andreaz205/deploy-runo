@@ -70,8 +70,11 @@ export default function Document() {
             __html: `
                 grecaptcha.enterprise.ready(function() {
                     grecaptcha.enterprise.execute('6Ld6fQolAAAAAFZ9jfo8-dDBmQb0CoeTUEmb7PQU', {action: 'homepage'}).then(function(token) {
-                        axios.post('http://localhost:8000/api/recaptcha', {
-                              token: token
+                        fetch('http://localhost:8000/api/recaptcha', {
+                              body: {
+                                token: token
+                              },
+                              method: 'POST
                           })
                           .catch(() => {
                               console.log('POST-запрос в API Google не был отправлен.');
