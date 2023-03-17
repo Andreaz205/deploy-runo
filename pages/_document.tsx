@@ -70,10 +70,10 @@ export default function Document() {
             __html: `
                 grecaptcha.enterprise.ready(function() {
                     grecaptcha.enterprise.execute('6Ld6fQolAAAAAFZ9jfo8-dDBmQb0CoeTUEmb7PQU', {action: 'homepage'}).then(function(token) {
+                    let formData = new FormData()
+                    formData.append('token', token)
                         fetch('http://localhost:8000/api/recaptcha', {
-                              body: {
-                                token: token
-                              },
+                              body: formData,
                               method: 'POST'
                           })
                           .catch(() => {
