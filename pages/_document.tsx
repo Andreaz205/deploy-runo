@@ -74,7 +74,7 @@ export default function Document() {
                               body: {
                                 token: token
                               },
-                              method: 'POST
+                              method: 'POST'
                           })
                           .catch(() => {
                               console.log('POST-запрос в API Google не был отправлен.');
