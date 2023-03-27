@@ -7,13 +7,30 @@ import axios from "axios"
 export default function Document() {
   return (
     <Html lang="ru">
-      <Head />
+      <Head>
+        <script dangerouslySetInnerHTML={{
+            __html: `
+          <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NLC5KN5');</script>
+<!-- End Google Tag Manager -->
+     `}}
+          />
+     
+      </Head>
       <body>
         <Main />
         <NextScript />
         <div id="modal_wrapper" className="modal_wrapper"></div>
         <script dangerouslySetInnerHTML={{
             __html: `
+            <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NLC5KN5"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
   
            (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
            m[i].l=1*new Date();
